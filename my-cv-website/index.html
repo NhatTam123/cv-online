@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>CV Online - Tên Của Bạn</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="container">
+
+    <header>
+      <img src="avatar.jpg" alt="Ảnh đại diện">
+      <h1>Tên Của Bạn</h1>
+      <p>Luật sư | Lập trình viên | Tư duy phản biện</p>
+    </header>
+
+    <section class="info">
+      <h2>📞 Thông tin liên hệ</h2>
+      <p>Email: ban@example.com</p>
+      <p>Phone: 0901 234 567</p>
+      <p>Website: ban.github.io</p>
+    </section>
+
+    <section class="skills">
+      <h2>🛠️ Kỹ năng</h2>
+      <ul>
+        <li>C# / ASP.NET Core</li>
+        <li>HTML / CSS / JavaScript</li>
+        <li>Luật doanh nghiệp, tranh tụng</li>
+        <li>Tư duy phản biện / Trình bày rõ ràng</li>
+      </ul>
+    </section>
+
+    <section class="experience">
+      <h2>💼 Kinh nghiệm</h2>
+      <p><strong>Luật sư tại Văn phòng Luật ABC</strong> (2021–nay)</p>
+      <p>Giải quyết tranh chấp doanh nghiệp, soạn thảo hợp đồng, tư vấn chiến lược pháp lý.</p>
+
+      <p><strong>Lập trình viên part-time</strong> (2023–nay)</p>
+      <p>Tham gia xây dựng hệ thống nội bộ bằng .NET Core.</p>
+    </section>
+
+    <section class="actions">
+      <a href="cv.pdf" download class="btn">📄 Tải CV PDF</a>
+      <button onclick="showContact()" class="btn">📬 Gửi tin nhắn</button>
+    </section>
+
+    <div id="contact-form" style="display: none;">
+      <h3>Gửi tin nhắn</h3>
+      <input type="text" placeholder="Tên của bạn">
+      <input type="email" placeholder="Email">
+      <textarea placeholder="Lời nhắn..."></textarea>
+      <button>Gửi</button>
+    </div>
+
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
