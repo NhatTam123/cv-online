@@ -176,5 +176,20 @@
     </div>
     <p class="mt-6 text-center text-xs text-[var(--muted)]">© 2025 Nguyễn Thế Hải • CV trực tuyến – công khai dự án & sản phẩm thật.</p>
   </footer>
+  <!-- PDF Export Script -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
+<script>
+function generatePDF() {
+const element = document.body;
+const opt = {
+margin: 0.5,
+filename: 'CV_NguyenTheHai.pdf',
+image: { type: 'jpeg', quality: 0.98 },
+html2canvas: { scale: 2 },
+jsPDF: { unit: 'in', format: 'a4', orientation: 'portrait' }
+};
+html2pdf().set(opt).from(element).save();
+}
+</script>
 </body>
 </html>
