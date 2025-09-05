@@ -10,25 +10,25 @@
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
   <script src="https://cdn.tailwindcss.com"></script>
   <style>
-  :root{--card:#0b1220;--ink:#e6edf6;--muted:#b8c6e3;--brand:#4f46e5;}
+    :root{--card:#0b1220;--ink:#e6edf6;--muted:#b8c6e3;--brand:#4f46e5;}
     html{scroll-behavior:smooth}
     body{font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,Helvetica,Arial,"Apple Color Emoji","Segoe UI Emoji"}
     .glass{background:linear-gradient(180deg,rgba(255,255,255,.08),rgba(255,255,255,.02));backdrop-filter:saturate(140%) blur(8px);border:1px solid rgba(255,255,255,.12)}
     .chip{border:1px solid rgba(255,255,255,.18)}
     .thumb{border-radius:0.75rem; overflow:hidden;}
     .thumb img{width:100%; height:auto; display:block;}
-    .avatar{width:200px; height:200px;}
+    .avatar{width:120px; height:120px;}
     @media print{.no-print{display:none} body{background:#fff} .glass{background:transparent;border:none} .print-white{color:#000}}
   </style>
 </head>
 <body class="bg-[#0a0f1a] text-[var(--ink)]">
   <!-- Header -->
   <header class="max-w-4xl mx-auto px-6 pt-10 pb-6">
-    <div class="glass rounded-2xl p-6 md:p-8 flex flex-col md:flex-row items-start md:items-center gap-6">
-      <div class="w-20 h-20 rounded-full overflow-hidden">
-        <img src="avatar.jpg">
+    <div class="glass rounded-2xl p-6 md:p-8 grid grid-cols-1 md:grid-cols-[auto,1fr] items-start gap-6">
+      <div class="avatar rounded-full overflow-hidden ring-2 ring-indigo-400/30 shadow-lg">
+        <img src="avatar.jpg" alt="Ảnh đại diện Nguyễn Thế Hải" class="w-full h-full object-cover" loading="lazy" decoding="async">
       </div>
-      <div class="flex-1">
+      <div class="flex-1 max-w-prose">
         <h1 class="text-2xl md:text-3xl font-extrabold leading-tight">Nguyễn Thế Hải<span class="block text-xl md:text-2xl font-semibold text-indigo-400">Playable Ads Developer (Luna)</span></h1>
         <p class="mt-2 text-sm md:text-base text-[var(--muted)]">Chuyên phát triển playable ads bằng <strong>Unity / HTML5</strong>, nền tảng lập trình game di động với kinh nghiệm nhiều năm phát triển và tối ưu game Unity 3D. Thành thạo xử lý các dự án phức tạp khi chuyển Unity sang Luna, tối ưu particle, model 3D, texture và sửa lỗi shader. Có kinh nghiệm kiến trúc code dễ đọc, tối ưu hiệu năng, xây dựng script tự động hóa cho pipeline build. Công khai các sản phẩm game đã phát triển trên Google Play.</p>
       </div>
@@ -38,6 +38,13 @@
         <a href="#projects" class="chip px-4 py-2 rounded-xl hover:bg-white/5">Dự án</a>
         <a href="#contact" class="chip px-4 py-2 rounded-xl hover:bg-white/5">Liên hệ</a>
       </nav>
+      <div class="md:col-span-2 flex flex-wrap gap-3 no-print">
+        <a href="#skills" class="chip px-4 py-2 rounded-xl hover:bg-white/5">Kỹ năng</a>
+        <a href="#experience" class="chip px-4 py-2 rounded-xl hover:bg-white/5">Kinh nghiệm</a>
+        <a href="#projects" class="chip px-4 py-2 rounded-xl hover:bg-white/5">Dự án</a>
+        <a href="#contact" class="chip px-4 py-2 rounded-xl hover:bg-white/5">Liên hệ</a>
+        <a href="cv.pdf" class="chip px-4 py-2 rounded-xl hover:bg-white/5">Tải CV (PDF)</a>
+      </div>
     </div>
   </header>
 
@@ -49,7 +56,7 @@
         <ul class="mt-3 space-y-2 text-[var(--muted)]">
           <li><strong class="text-[var(--ink)]">Địa điểm:</strong> Hà Nội (sẵn sàng làm remote)</li>
           <li><strong class="text-[var(--ink)]">Thâm niên:</strong> 3–5 năm làm playable/interactive ads & mobile game</li>
-          <li><strong class="text-[var(--ink)]">Mong muốn:</strong> Playable Ads Luna</li>
+          <li><strong class="text-[var(--ink)]">Mong muốn:</strong> Playable Ads Luna / Game Developer</li>
         </ul>
       </div>
       <div class="glass rounded-2xl p-5">
@@ -59,7 +66,7 @@
       <div class="glass rounded-2xl p-5">
         <h3 class="text-sm uppercase tracking-wider text-indigo-300/90">Liên hệ</h3>
         <ul class="mt-3 space-y-2">
-          <li>Email: <a class="underline" href="mailto:youremail@example.com">camthiennam5@gmail.com</a></li>
+          <li>Email: <a class="underline" href="mailto:youremail@example.com">youremail@example.com</a></li>
           <li>Điện thoại: 0xxx xxx xxx</li>
           <li>GitHub: <a class="underline" href="https://github.com/yourname" target="_blank" rel="noopener">github.com/yourname</a></li>
           <li>LinkedIn: <a class="underline" href="https://www.linkedin.com/in/yourname" target="_blank" rel="noopener">linkedin.com/in/yourname</a></li>
@@ -137,7 +144,7 @@
     <div class="mt-4 grid md:grid-cols-2 gap-4">
       <a class="glass rounded-2xl p-5 block hover:bg-white/5" href="https://play.google.com/store/apps/details?id=com.onegame.chickenshooter" target="_blank" rel="noopener">
         <div class="thumb mb-3">
-          <img src="https://play.google.com/uc?export=view&id=1yvxHWBw4I6BZKoVqhoKqxF91hNkSZSKH" alt="Strike Galaxy Attack thumbnail">
+          <img src="avatar.jpg" alt="Strike Galaxy Attack thumbnail">
         </div>
         <h3 class="font-semibold">Strike Galaxy Attack</h3>
         <p class="text-[var(--muted)] mt-1">Game bắn gà không gian – hơn 5 triệu lượt tải trên Google Play.</p>
