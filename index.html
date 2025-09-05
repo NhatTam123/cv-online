@@ -178,19 +178,36 @@
     <p class="mt-6 text-center text-xs text-[var(--muted)]">© 2025 Nguyễn Thế Hải • CV trực tuyến – công khai dự án & sản phẩm thật.</p>
   </footer>
   <!-- PDF Export Script -->
-<script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
-<script>
-function generatePDF() {
-const element = document.body;
-const opt = {
-margin: 0.5,
-filename: 'CV_NguyenTheHai.pdf',
-image: { type: 'jpeg', quality: 0.98 },
-html2canvas: { scale: 2 },
-jsPDF: { unit: 'in', format: 'a4', orientation: 'portrait' }
-};
-html2pdf().set(opt).from(element).save();
-}
-</script>
+<!-- PDF Export Script -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
+  <script>
+    async function generatePDF() {
+      // Bật chế độ tối ưu giao diện cho PDF (tắt blur/backdrop-filter...)
+      document.documentElement.classList.add('pdf-mode');
+      // Chờ web fonts tải xong để tránh bị nhảy font trong PDF
+      if (document.fonts && document.fonts.ready) {
+        try { await document.fonts.ready; } catch (e) {}
+      }
+      const element = document.body; // có thể đổi sang phần tử bao ngoài nếu muốn
+      const opt = {
+        margin:       [0.5, 0.5, 0.6, 0.5],
+        filename:     'CV_NguyenTheHai.pdf',
+        image:        { type: 'jpeg', quality: 0.98 },
+        html2canvas:  {
+          scale: 2,
+          useCORS: true,
+          backgroundColor: '#ffffff',
+          ignoreElements: (el) => el.classList && el.classList.contains('no-print')
+        },
+        pagebreak:    { mode: ['css', 'legacy'] },
+        jsPDF:        { unit: 'in', format: 'a4', orientation: 'portrait' }
+      };
+      try {
+        await html2pdf().set(opt).from(element).save();
+      } finally {
+        document.documentElement.classList.remove('pdf-mode');
+      }
+    }
+  </script>
 </body>
 </html>
